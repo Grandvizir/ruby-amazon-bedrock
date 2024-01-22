@@ -8,6 +8,7 @@ require_relative 'payload_builders/amazon/titan_text_express_v1'
 require_relative 'payload_builders/anthropic/claude_v1'
 require_relative 'payload_builders/anthropic/claude_instant_v1'
 require_relative 'payload_builders/anthropic/claude_v2'
+require_relative 'payload_builders/anthropic/claude_v2_1'
 require_relative 'payload_builders/cohere/command_light_text_v14'
 require_relative 'payload_builders/cohere/command_text_v14'
 require_relative 'payload_builders/cohere/embed_english_v3'
@@ -58,6 +59,7 @@ module RubyAmazonBedrock
         'anthropic.claude-instant-v1' => PayloadBuilders::Anthropic::ClaudeInstantV1,
         'anthropic.claude-v1' => PayloadBuilders::Anthropic::ClaudeV1,
         'anthropic.claude-v2' => PayloadBuilders::Anthropic::ClaudeV2,
+        'anthropic.claude-v2:1' => PayloadBuilders::Anthropic::ClaudeV2_1,
         'cohere.command-light-text-v14' => PayloadBuilders::Cohere::CommandLightTextV14,
         'cohere.command-text-v14' => PayloadBuilders::Cohere::CommandTextV14,
         'cohere.embed-english-v3' => PayloadBuilders::Cohere::EmbedEnglishV3,
