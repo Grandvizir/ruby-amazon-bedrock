@@ -49,6 +49,7 @@ module RubyAmazonBedrock
         'anthropic.claude-instant-v1' => ResponseBuilders::Anthropic,
         'anthropic.claude-v1' => ResponseBuilders::Anthropic,
         'anthropic.claude-v2' => ResponseBuilders::Anthropic,
+        'anthropic.claude-v2:1' => ResponseBuilders::Anthropic,
         'cohere.command-light-text-v14' => ResponseBuilders::CohereCommand,
         'cohere.command-text-v14' => ResponseBuilders::CohereCommand,
         'cohere.embed-english-v3' => ResponseBuilders::CohereEmbed,
