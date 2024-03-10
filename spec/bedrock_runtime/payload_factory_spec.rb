@@ -13,6 +13,7 @@ RSpec.describe RubyAmazonBedrock::PayloadFactory do
      "anthropic.claude-instant-v1",
      "anthropic.claude-v1",
      "anthropic.claude-v2",
+     "anthropic.claude-v2_1",
      "cohere.command-light-text-v14",
      "cohere.command-text-v14",
      "cohere.embed-english-v3",
