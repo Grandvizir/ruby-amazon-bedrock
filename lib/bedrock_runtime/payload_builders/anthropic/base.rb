@@ -28,6 +28,12 @@ module RubyAmazonBedrock
         # 			text generation.
         #     - :anthropic_version [String] Specifies the version of the underlying model or API.
         def build
+          return default_api if model_id != 'anthropic.claude-3-sonnet-20240229-v1:0'
+
+          message_api
+        end
+
+        def default_api
           {
             model_id: model_id,
             content_type: 'application/json',
@@ -40,6 +46,33 @@ module RubyAmazonBedrock
               top_p: parameters[:top_p],
               stop_sequences: parameters[:stop_sequences],
               anthropic_version: 'bedrock-2023-05-31'
+            }.to_json
+          }
+        end
+
+        def message_api
+          {
+            model_id: model_id,
+            content_type: 'application/json',
+            accept: '*/*',
+            body: {
+              anthropic_version: "bedrock-2023-05-31",
+              max_tokens: parameters[:max_tokens_to_sample],
+              temperature: parameters[:temperature],
+              top_k: parameters[:top_k],
+              top_p: parameters[:top_p],
+              stop_sequences: parameters[:stop_sequences],
+              messages: [
+                {
+                  role: "user",
+                  content: [
+                    {
+                      type: "text",
+                      text: @prompt.to_s
+                    }
+                  ]
+                }
+              ]
             }.to_json
           }
         end
