@@ -13,7 +13,8 @@ RSpec.describe RubyAmazonBedrock::PayloadFactory do
      "anthropic.claude-instant-v1",
      "anthropic.claude-v1",
      "anthropic.claude-v2",
-     "anthropic.claude-v2_1",
+     "anthropic.claude-v2:1",
+     "anthropic.claude-3-sonnet-20240229-v1:0",
      "cohere.command-light-text-v14",
      "cohere.command-text-v14",
      "cohere.embed-english-v3",
@@ -49,6 +50,9 @@ RSpec.describe RubyAmazonBedrock::PayloadFactory do
 
   describe '#models_to_builders' do
     it 'defines a mapping of model identifiers to builder classes' do
+      puts bedrock_models.inspect
+      puts models_mapping.keys.inspect
+
       expect(models_mapping.keys).to eq(bedrock_models)
     end
   end

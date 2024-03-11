@@ -44,12 +44,20 @@ RSpec.describe RubyAmazonBedrock::ResponseFactory do
   end
 
   context 'when model_id is from Anthropic generators' do
-    ['anthropic.claude-instant-v1', 'anthropic.claude-v1', 'anthropic.claude-v2'].each do |model_id|
+    ['anthropic.claude-instant-v1', 'anthropic.claude-v1', 'anthropic.claude-v2', 'anthropic.claude-v2:1'].each do |model_id|
       subject { described_class.new(model_id, response) }
 
-      it 'creates an AmazonText response builder' do
+      it 'creates an Anthropic response builder' do
         expect(subject.create).to be_a(RubyAmazonBedrock::ResponseBuilders::Anthropic)
       end
+    end
+  end
+
+  context 'when model_id is Anthropic claude v3' do
+    subject { described_class.new('anthropic.claude-3-sonnet-20240229-v1:0', response) }
+
+    it 'creates an Anthropic v3 response builder' do
+      expect(subject.create).to be_a(RubyAmazonBedrock::ResponseBuilders::AnthropicV3)
     end
   end
 

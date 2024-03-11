@@ -23,7 +23,7 @@ module RubyAmazonBedrock
         response = JSON.parse(@response.body.read, symbolize_names: true)
 
         {
-          text: response.dig(:full_response, :content, 0, :text),
+          text: response.dig(:content, 0, :text),
           full_response: response
         }
       end
