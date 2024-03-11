@@ -4,6 +4,7 @@ require_relative 'response_builders/ai_21_labs'
 require_relative 'response_builders/amazon_text'
 require_relative 'response_builders/amazon_image'
 require_relative 'response_builders/anthropic'
+require_relative 'response_builders/anthropic_v3'
 require_relative 'response_builders/cohere_command'
 require_relative 'response_builders/cohere_embed'
 require_relative 'response_builders/meta'
@@ -50,7 +51,7 @@ module RubyAmazonBedrock
         'anthropic.claude-v1' => ResponseBuilders::Anthropic,
         'anthropic.claude-v2' => ResponseBuilders::Anthropic,
         'anthropic.claude-v2:1' => ResponseBuilders::Anthropic,
-        'anthropic.claude-3-sonnet-20240229-v1:0' => ResponseBuilders::Anthropic,
+        'anthropic.claude-3-sonnet-20240229-v1:0' => ResponseBuilders::AnthropicV3,
         'cohere.command-light-text-v14' => ResponseBuilders::CohereCommand,
         'cohere.command-text-v14' => ResponseBuilders::CohereCommand,
         'cohere.embed-english-v3' => ResponseBuilders::CohereEmbed,
