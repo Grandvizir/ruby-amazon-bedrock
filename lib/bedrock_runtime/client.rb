@@ -21,7 +21,7 @@ module RubyAmazonBedrock
         region: region || config.region,
         access_key_id: access_key_id || config.access_key_id,
         secret_access_key: secret_access_key || config.secret_access_key,
-        http_read_timeout: config.http_read_timeout || 120
+        http_read_timeout: config.http_read_timeout.to_f || 120
       )
     end
 

@@ -22,7 +22,7 @@ module RubyAmazonBedrock
       @region = ENV.fetch('AWS_REGION', nil)
       @access_key_id = ENV.fetch('AWS_ACCESS_KEY_ID', nil)
       @secret_access_key = ENV.fetch('AWS_SECRET_ACCESS_KEY', nil)
-      @http_read_timeout = ENV.fetch('HTTP_READ_TIMEOUT', 120)
+      @http_read_timeout = ENV.fetch('HTTP_READ_TIMEOUT', 120).to_f
     end
   end
 
