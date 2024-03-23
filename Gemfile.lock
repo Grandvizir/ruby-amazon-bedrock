@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby-amazon-bedrock (0.2.5)
+    ruby-amazon-bedrock (0.2.9)
       aws-sdk-bedrockruntime (~> 1.0)
       aws-sdk-s3 (~> 1.0)
 
@@ -93,6 +93,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  arm64-darwin-23
 
 DEPENDENCIES
   bundler-audit (~> 0.8)
