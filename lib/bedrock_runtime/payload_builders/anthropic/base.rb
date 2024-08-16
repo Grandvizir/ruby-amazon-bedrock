@@ -28,7 +28,9 @@ module RubyAmazonBedrock
         # 			text generation.
         #     - :anthropic_version [String] Specifies the version of the underlying model or API.
         def build
-          return default_api if model_id != 'anthropic.claude-3-sonnet-20240229-v1:0'
+          message_models = %w[anthropic.claude-3-sonnet-20240229-v1:0 anthropic.claude-3-5-sonnet-20240620-v1:0]
+
+          return default_api unless message_models.include? model_id
 
           message_api
         end
