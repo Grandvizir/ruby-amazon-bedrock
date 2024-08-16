@@ -52,6 +52,7 @@ module RubyAmazonBedrock
         'anthropic.claude-v2' => ResponseBuilders::Anthropic,
         'anthropic.claude-v2:1' => ResponseBuilders::Anthropic,
         'anthropic.claude-3-sonnet-20240229-v1:0' => ResponseBuilders::AnthropicV3,
+        'anthropic.claude-3-5-sonnet-20240620-v1:0' => ResponseBuilders::AnthropicV3_5,
         'cohere.command-light-text-v14' => ResponseBuilders::CohereCommand,
         'cohere.command-text-v14' => ResponseBuilders::CohereCommand,
         'cohere.embed-english-v3' => ResponseBuilders::CohereEmbed,
